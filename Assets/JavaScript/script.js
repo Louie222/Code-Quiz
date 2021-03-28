@@ -50,26 +50,28 @@ var questions = [
     title: "The two types of scopes are?",
     options: ["domestic and international", "local and global", "scope 1 and scope 2", "Australia and overseas"],
     answer: "local and global"
-},
+}
 ]
 
 function displayQuestion(index) {
+    document.getElementById("content").innerHTML = questions;
 
-    document.getElementById("content").innerHTML = "";
+    var questionTitle = document.createElement("h1");
+    console.log(questionTitle)
     questionTitle.textContent = questions[index].title;
+    
 
     document.getElementById("content").append(questionTitle);
 
     for (var i = 0; i < questions[index].options.length; i++) {
         var questionOptions = document.createElement("button");
-        questionsOptions.textContent = questions[index].options[i];
+        questionOptions.textContent = questions[index].options[i];
         document.getElementById("content").append(questionOptions);
     }
 
-    document
-    .querySelectorAll("button")
-    .forEach((button) =>
+    document.querySelectorAll("button").forEach((button) =>
         button.addEventListener("click", () => displayQuestion(index + 1))
-    )
+    );
+
 
 }
