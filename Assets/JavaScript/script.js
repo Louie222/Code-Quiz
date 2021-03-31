@@ -54,59 +54,66 @@ var questions = [
     }
 ]
 
+//var startButton = document.createElement("start");
+    //startButton.addEventListener("click", beginQuiz)
+
+// function to click Start Quiz! button. When clicked question, options, timer will be displayed.
+
+var start = document.getElementById("startBtn");
 
 
-var start = document.getElementById("start");
+
+
+
+
 var quiz = document.getElementById("quiz");
 var question = document.getElementById("question2");
-var choices = document.getElementById("choices");
-const choiceA = document.getElementById("A");
-const choiceB = document.getElementById("B");
-const choiceC = document.getElementById("C");
-const choiceD = document.getElementById("D");
+//var choices = document.getElementById("choices");
+//const choiceA = document.getElementById("A");
+//const choiceB = document.getElementById("B");
+//const choiceC = document.getElementById("C");
+//const choiceD = document.getElementById("D");
 
 var counter = 0;
-
-
-
 
 // choiceA.innerHTML = questions[0].options[0];
 // choiceB.innerHTML = questions[0].options[1];
 // choiceC.innerHTML = questions[0].options[2];
 
+// 
 function displayQuestion() {
 
     question.innerHTML = questions[counter].title;
     choices.innerHTML = "";
 
     for (var i = 0; i < questions[counter].options.length; i++) {
-        var answersDiv = document.createElement("div");
+        var choiceButton = document.createElement("button");
+        choiceButton.style.display = "block";
 
-        answersDiv.innerHTML = questions[counter].options[i];
+        choiceButton.innerHTML = questions[counter].options[i];
 
-        choices.append(answersDiv);
+        choices.append(choiceButton);
     
-    answersDiv.addEventListener("click",function(){
-        counter = counter + 1
-        displayQuestion()
-    })
-
-
+        choiceButton.addEventListener("click",checkAnswer)    
 
         //add event listener here to let the user know what answer they have selected, and to move on from the question
                 // increase counter 
                 // then call the displayQuestion function 
-
-    }
+    }   
 
 }
 
-displayQuestion(); 
+displayQuestion();
 
-
-
-
-
-
-
-
+function checkAnswer () {
+    if (this.textContent===questions[counter].answer){
+        counter = counter + 1
+        // if counter is equal to questions.length then we are out of questions. Needs to be a function to end the quiz.
+        // else to display next question
+        displayQuestion()
+    } 
+    
+    // if answer is incorrect penalise 10 seconds from timer and show next question 
+    
+}
+;
