@@ -1,0 +1,45 @@
+body{
+    background: lightgreen;
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    background: orange;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.start-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.restart-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1cm;
+}
+
+.hide {
+    display: none;
+}
+
+
+
