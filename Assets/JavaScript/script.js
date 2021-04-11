@@ -1,3 +1,15 @@
+// GIVEN I am taking a code quiz
+// WHEN I click the start button
+// THEN a timer starts and I am presented with a question
+// WHEN I answer a question
+// THEN I am presented with another question - Remove element
+// WHEN I answer a question incorrectly
+// THEN time is subtracted from the clock
+// WHEN all questions are answered or the timer reaches 0
+// THEN the game is over
+// WHEN the game is over
+// THEN I can save my initials and my score
+
 var questions = [
 
     {
@@ -57,14 +69,7 @@ var questions = [
 //var startButton = document.createElement("start");
     //startButton.addEventListener("click", beginQuiz)
 
-// function to click Start Quiz! button. When clicked question, options, timer will be displayed.
-
-var start = document.getElementById("startBtn");
-
-
-
-
-
+// function to click Start Quiz! button. When clicked question, options, timer will be displayed
 
 var quiz = document.getElementById("quiz");
 var question = document.getElementById("question2");
@@ -103,6 +108,7 @@ function displayQuestion() {
 
 }
 
+
 displayQuestion();
 
 function checkAnswer () {
@@ -111,9 +117,36 @@ function checkAnswer () {
         // if counter is equal to questions.length then we are out of questions. Needs to be a function to end the quiz.
         // else to display next question
         displayQuestion()
-    } 
-    
-    // if answer is incorrect penalise 10 seconds from timer and show next question 
+
+    }
+    {}
+
+}
+
+function incorrectAnswer () {
+    if (this.textContent!==question[counter].answer){
+        
+
+    }
+
     
 }
-;
+         
+    
+    
+    
+    //textContent = Wrong  
+    //displayQuestion()   
+    
+    
+
+
+        // The answer is wrong and I want a correct/incorrect message to display
+        // the text I will need to create a element with an ID in the HTML (p tag, h1-h4 tag)
+        // h3 id="answerInformation"></h3>
+        //then I will need to retrive that element e.g. document.getElementId("")     store this elementId into a variable e.g var messageToDisplay = document.getElementId("#answerInformation")
+        //then I will want to change the text of that element to e.g textContent=wrong
+        // counter = counter + 1 even if question is wrong the quiz will continue
+        // clear textContent when moving to a new question
+
+    // if answer is incorrect penalise 10 seconds from timer and show next question 
